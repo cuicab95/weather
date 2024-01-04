@@ -19,7 +19,7 @@ class ReservamosClient:
 
     @classmethod
     def filter_data_by_result_type(cls, data, search):
-        data = filter(lambda d: d['result_type'] == "city" and search in d['city_slug'], data)
+        data = filter(lambda d: d['result_type'] == "city" and d['country'] == "México" and search in d['city_slug'], data)
         return cls.get_lat_and_long(list(data))
 
     @classmethod
