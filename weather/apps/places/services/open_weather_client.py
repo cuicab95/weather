@@ -9,7 +9,7 @@ class OpenWeatherClient:
 
     def get_weather_by_lat_and_long(self, lat, long):
         headers = {}
-        params = f"?lat={lat}&lon={long}&exclude=minutely,hourly,current&appid={self.__api_key}&lang=es&units=metric"
+        params = f"?lat={lat}&lon={long}&exclude=minutely,hourly,current,alerts&appid={self.__api_key}&lang=es&units=metric"
         url = f"{self.__url_client}/onecall{params}"
         response = requests.get(url=url, headers=headers)
         data = response.json()
